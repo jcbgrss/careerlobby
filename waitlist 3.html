@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>careerlobby — coming soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+html,body{height:100%}
+body{background:#EEECEA;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:3rem 1.5rem;text-align:center}
+.coming-pill{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#085041;background:#E1F5EE;padding:5px 14px;border-radius:20px;margin-bottom:2rem;display:inline-block}
+.duck{font-size:80px;line-height:1;margin-bottom:1.25rem}
+.logo{font-size:30px;font-weight:700;color:#1A1A1A;letter-spacing:-.02em;margin-bottom:1.25rem}
+.logo span{color:#1D9E75}
+.tagline{font-size:18px;font-weight:500;color:#085041;line-height:1.55;margin-bottom:2.5rem}
+.form{width:100%;max-width:360px;display:flex;flex-direction:column;gap:.75rem}
+.email-input{width:100%;padding:15px 16px;font-size:15px;font-family:'Inter',sans-serif;border:1.5px solid #D5D2CC;border-radius:12px;background:#fff;color:#1A1A1A;outline:none;-webkit-appearance:none;transition:border-color .15s}
+.email-input:focus{border-color:#1D9E75}
+.email-input::placeholder{color:#9E9B96}
+.cta-btn{width:100%;padding:16px;font-size:16px;font-weight:700;font-family:'Inter',sans-serif;border-radius:12px;border:none;background:#1D9E75;color:#fff;cursor:pointer;letter-spacing:-.01em;-webkit-appearance:none;transition:background .15s}
+.cta-btn:hover{background:#0F6E56}
+.cta-btn:active{background:#085041}
+.sub{font-size:12px;color:#9E9B96;margin-top:.25rem}
+.success-msg{display:none;background:#E1F5EE;border-radius:12px;padding:1.5rem;color:#085041;font-size:15px;font-weight:500;line-height:1.6;max-width:360px}
+</style>
+</head>
+<body>
+  <div class="coming-pill">Coming soon</div>
+  <div class="duck">🦆</div>
+  <div class="logo">career<span>lobby</span></div>
+  <div class="tagline">The Flock is forming.<br>Get in early.</div>
+  <div class="form" id="form">
+    <input class="email-input" type="email" id="email-input" placeholder="your@email.com" autocomplete="email">
+    <button class="cta-btn" onclick="joinWaitlist()">Reserve my spot</button>
+    <div class="sub">No spam. We're better than that.</div>
+  </div>
+  <div class="success-msg" id="success">
+    You're in the Flock. 🦆<br>We'll quack when it's ready.
+  </div>
+<script>
+function joinWaitlist(){
+  const val=document.getElementById('email-input').value.trim();
+  if(!val||!val.includes('@'))return;
+  document.getElementById('form').style.display='none';
+  document.getElementById('success').style.display='block';
+}
+document.getElementById('email-input').addEventListener('keydown',function(e){
+  if(e.key==='Enter')joinWaitlist();
+});
+</script>
+</body>
+</html>
