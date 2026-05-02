@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `https://api.beehiiv.com/v2/publications/8c34adcf-631d-4e05-ae24-d9cf72bcaaac/subscriptions`,
+      `https://api.beehiiv.com/v2/publications/pub_8c34adcf-631d-4e05-ae24-d9cf72bcaaac/subscriptions`,
       {
         method: 'POST',
         headers: {
