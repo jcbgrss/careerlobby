@@ -53,10 +53,10 @@ async function joinWaitlist(){
   btn.textContent = 'Saving your spot...';
   
   try {
-    const res = await fetch('https://api.beehiiv.com/v2/publications/8c34adcf-631d-4e05-ae24-d9cf72bcaaac/subscriptions', {
+    const res = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, reactivate_existing: false, send_welcome_email: false })
+      body: JSON.stringify({ email: email })
     });
     
     if(res.ok || res.status === 201 || res.status === 200){
