@@ -24,7 +24,9 @@ body{background:#EEECEA;display:flex;flex-direction:column;align-items:center;ju
 .cta-btn:hover{background:#0F6E56}
 .cta-btn:active{background:#085041}
 .sub{font-size:12px;color:#9E9B96;margin-top:.25rem}
-.success-msg{display:none;background:#E1F5EE;border-radius:12px;padding:1.5rem;color:#085041;font-size:15px;font-weight:500;line-height:1.6;max-width:360px}
+.beehiiv-wrap{width:100%;max-width:360px}
+.beehiiv-wrap iframe{width:100%!important;border-radius:12px!important}
+.sub{font-size:12px;color:#9E9B96;margin-top:.5rem}
 </style>
 </head>
 <body>
@@ -32,24 +34,9 @@ body{background:#EEECEA;display:flex;flex-direction:column;align-items:center;ju
   <div class="duck">🦆</div>
   <div class="logo">career<span>lobby</span></div>
   <div class="tagline">The Flock is forming.<br>Get in early.</div>
-  <div class="form" id="form">
-    <input class="email-input" type="email" id="email-input" placeholder="your@email.com" autocomplete="email">
-    <button class="cta-btn" onclick="joinWaitlist()">Reserve my spot</button>
-    <div class="sub">No spam. We're better than that.</div>
+  <div class="beehiiv-wrap">
+    <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="43e00ccc-802b-45c3-9ba9-66d1376073f7"></script>
   </div>
-  <div class="success-msg" id="success">
-    You're in the Flock. 🦆<br>We'll quack when it's ready.
-  </div>
-<script>
-function joinWaitlist(){
-  const val=document.getElementById('email-input').value.trim();
-  if(!val||!val.includes('@'))return;
-  document.getElementById('form').style.display='none';
-  document.getElementById('success').style.display='block';
-}
-document.getElementById('email-input').addEventListener('keydown',function(e){
-  if(e.key==='Enter')joinWaitlist();
-});
-</script>
+  <div class="sub">No spam. We're better than that.</div>
 </body>
 </html>
