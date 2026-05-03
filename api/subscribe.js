@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({ 
           email: email, 
           reactivate_existing: false, 
-          send_welcome_email: false 
+          send_welcome_email: true 
         })
       }
     );
